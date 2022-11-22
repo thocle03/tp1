@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}{% endblock %}
+{% block body %}
+	{{ parent() }}
+	<h4>Voici les nombres pairs :</h4>
+	{% for num in numbers %}
+		{% if (num % 2) == 0 %}
+			{{num}}
+		{% endif %}
+	{% endfor %}
+
+	<h4>min number :
+		{{min}}
+	</h4>
+	<h4>max number :
+		{{max}}
+	</h4>
+	<h4>size list :
+		{{size}}
+	</h4>
+
+	<h4>Voici les nombres impairs :</h4>
+	{% for num in numbers %}
+		{% if (num % 2) != 0 %}
+			{{num}}
+		{% endif %}
+	{% endfor %}
+{% endblock %}
